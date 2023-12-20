@@ -14,6 +14,7 @@ import com.itmk.web.course.entity.ExportMemberVo;
 import com.itmk.web.course.entity.PageParm;
 import com.itmk.web.course.service.CourseService;
 import com.itmk.web.member.entity.Member;
+import com.itmk.web.member.entity.RechargeParm;
 import com.itmk.web.member.service.MemberService;
 import com.itmk.web.member_course.entity.MemberCourse;
 import com.itmk.web.member_course.service.MemberCourseService;
@@ -111,8 +112,32 @@ public class CourseController {
         if (flag == -1) {
             return ResultUtils.error("您的充值金额不足，请充值!");
         }
+        // 检查课程是否已满员
+        if (course.getRegisterNumber() >= course.getMaxNumber()) {
+            return ResultUtils.error("该课程已满员，无法报名！");
+        }
         memberCourseService.joinCourse(memberCourse);
+        // 报名成功后增加课程的 registerNumber
+        course.setRegisterNumber(course.getRegisterNumber() + 1);
+        courseService.updateById(course);
         return ResultUtils.success("报名成功!");
+    }
+    @PreAuthorize("hasAuthority('sys:courseList:quit')")
+    @PostMapping("/quitCourse")
+    public ResultVo quitCourse(@RequestBody Long memberCourseId) {
+        try {
+            // 查询报名信息
+            MemberCourse memberCourse = memberCourseService.getById(memberCourseId);
+            if (memberCourse == null) {
+                return ResultUtils.error("该报名记录不存在！");
+            }
+            // 删除报名记录
+            memberCourseService.quitCourse(memberCourseId);
+            return ResultUtils.success("退课成功！");
+        } catch (Exception e) {
+            e.printStackTrace();
+            return ResultUtils.error("退课失败，发生异常：" + e.getMessage());
+        }
     }
 
     //我的课程列表

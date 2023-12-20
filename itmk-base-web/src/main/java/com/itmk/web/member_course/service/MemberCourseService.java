@@ -10,4 +10,7 @@ import com.itmk.web.member_course.entity.MemberCourse;
 public interface MemberCourseService extends IService<MemberCourse> {
     //报名
     void joinCourse(MemberCourse memberCourse);
+    //退课
+    void quitCourse(Long memberCourseId);
+
 }

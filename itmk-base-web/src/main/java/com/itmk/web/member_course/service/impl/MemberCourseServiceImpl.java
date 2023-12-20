@@ -42,4 +42,23 @@ public class MemberCourseServiceImpl extends ServiceImpl<MemberCourseMapper, Mem
             memberMapper.subMoney(parm);
         }
     }
+
+    @Override
+    @Transactional
+    public void quitCourse(Long memberCourseId) {
+        // 查询报名信息
+        MemberCourse memberCourse = this.getById(memberCourseId);
+        // 根据课程id查询课程信息
+        Course course = courseService.getById(memberCourse.getCourseId());
+        // 删除报名记录
+        this.baseMapper.deleteById(memberCourseId);
+        // 返还课程费用
+        RechargeParm parm = new RechargeParm();
+        parm.setMemberId(memberCourse.getMemberId());
+        parm.setMoney(course.getCoursePrice());
+        memberMapper.addMoney(parm);
+        // 退课成功后减少课程的 registerNumber
+        course.setRegisterNumber(course.getRegisterNumber() - 1);
+        courseService.updateById(course);
+    }
 }
