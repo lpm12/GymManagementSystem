@@ -4,13 +4,13 @@ import com.baomidou.mybatisplus.extension.service.IService;
 import com.itmk.web.member_course.entity.MemberCourse;
 
 /**
- * @Author java实战基地
- * @Version 2383404558
+ * @Author lpm
+ *  
  */
 public interface MemberCourseService extends IService<MemberCourse> {
     //报名
     void joinCourse(MemberCourse memberCourse);
     //退课
-    void quitCourse(Long memberCourseId);
+    void quitCourse(MemberCourse memberCourse);
 
 }

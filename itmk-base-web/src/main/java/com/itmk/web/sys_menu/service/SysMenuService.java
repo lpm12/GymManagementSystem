@@ -5,8 +5,8 @@ import com.itmk.web.sys_menu.entity.SysMenu;
 import java.util.List;
 
 /**
- * @Author java实战基地
- * @Version 2383404558
+ * @Author lpm
+ *  
  */
 public interface SysMenuService extends IService<SysMenu> {
     List<SysMenu> getParent();

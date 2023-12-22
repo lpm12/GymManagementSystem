@@ -5,8 +5,8 @@ import lombok.Data;
 import java.io.Serializable;
 
 /**
- * @Author java实战基地
- * @Version 2383404558
+ * @Author lpm
+ *  
  */
 @Data
 public class RoleAssignParm implements Serializable {

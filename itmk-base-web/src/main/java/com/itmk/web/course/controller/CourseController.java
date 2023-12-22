@@ -33,8 +33,8 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 /**
- * @Author java实战基地
- * @Version 2383404558
+ * @Author lpm
+ *  
  */
 @RestController
 @RequestMapping("/api/course")
@@ -122,17 +122,21 @@ public class CourseController {
         courseService.updateById(course);
         return ResultUtils.success("报名成功!");
     }
+    //退课
     @PreAuthorize("hasAuthority('sys:courseList:quit')")
     @PostMapping("/quitCourse")
-    public ResultVo quitCourse(@RequestBody Long memberCourseId) {
+    public ResultVo quitCourse(@RequestBody MemberCourse memberCourse) {
         try {
             // 查询报名信息
-            MemberCourse memberCourse = memberCourseService.getById(memberCourseId);
-            if (memberCourse == null) {
+            MemberCourse existingMemberCourse = memberCourseService.getById(memberCourse.getMemberCourseId());
+
+            if (existingMemberCourse == null) {
                 return ResultUtils.error("该报名记录不存在！");
             }
-            // 删除报名记录
-            memberCourseService.quitCourse(memberCourseId);
+
+            // 处理退课逻辑
+            memberCourseService.quitCourse(existingMemberCourse);
+
             return ResultUtils.success("退课成功！");
         } catch (Exception e) {
             e.printStackTrace();

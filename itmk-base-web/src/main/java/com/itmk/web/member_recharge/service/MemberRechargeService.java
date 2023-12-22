@@ -7,8 +7,8 @@ import com.itmk.web.member_recharge.entity.MemberRecharge;
 
 
 /**
- * @Author java实战基地
- * @Version 2383404558
+ * @Author lpm
+ *  
  */
 public interface MemberRechargeService extends IService<MemberRecharge> {
     IPage<MemberRecharge> getRecherList(RechargeParmList parmList);

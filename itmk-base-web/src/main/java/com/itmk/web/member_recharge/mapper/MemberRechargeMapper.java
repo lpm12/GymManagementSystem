@@ -8,8 +8,8 @@ import org.apache.ibatis.annotations.Param;
 import java.util.List;
 
 /**
- * @Author java实战基地
- * @Version 2383404558
+ * @Author lpm
+ *  
  */
 public interface MemberRechargeMapper extends BaseMapper<MemberRecharge> {
     IPage<MemberRecharge> getRecherList(IPage<MemberRecharge> page);

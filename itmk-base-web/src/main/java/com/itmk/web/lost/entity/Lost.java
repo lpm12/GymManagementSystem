@@ -6,8 +6,8 @@ import com.baomidou.mybatisplus.annotation.TableName;
 import lombok.Data;
 
 /**
- * @Author java实战基地
- * @Version 2383404558
+ * @Author lpm
+ *
  */
 @Data
 @TableName("lost")

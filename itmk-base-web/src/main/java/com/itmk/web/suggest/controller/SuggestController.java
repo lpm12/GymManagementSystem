@@ -16,8 +16,8 @@ import org.springframework.web.bind.annotation.*;
 import java.util.Date;
 
 /**
- * @Author java实战基地
- * @Version 2383404558
+ * @Author lpm
+ *  
  */
 @RestController
 @RequestMapping("/api/suggest")

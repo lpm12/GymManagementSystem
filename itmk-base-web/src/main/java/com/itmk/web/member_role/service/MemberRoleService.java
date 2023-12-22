@@ -4,8 +4,8 @@ import com.baomidou.mybatisplus.extension.service.IService;
 import com.itmk.web.member_role.entity.MemberRole;
 
 /**
- * @Author java实战基地
- * @Version 2383404558
+ * @Author lpm
+ *  
  */
 public interface MemberRoleService extends IService<MemberRole> {
 }

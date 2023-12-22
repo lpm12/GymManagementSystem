@@ -7,8 +7,8 @@ import com.itmk.web.member_apply.service.MemberApplyService;
 import org.springframework.stereotype.Service;
 
 /**
- * @Author java实战基地
- * @Version 2383404558
+ * @Author lpm
+ *
  */
 @Service
 public class MemberApplyServiceImpl extends ServiceImpl<MemberApplyMapper, MemberApply> implements MemberApplyService {

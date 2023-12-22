@@ -12,8 +12,8 @@ import java.math.BigDecimal;
 import java.util.Collection;
 
 /**
- * @Author java实战基地
- * @Version 2383404558
+ * @Author lpm
+ *  
  */
 @Data
 @TableName("member")

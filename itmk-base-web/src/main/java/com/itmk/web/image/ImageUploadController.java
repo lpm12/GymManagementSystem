@@ -11,8 +11,8 @@ import java.io.File;
 import java.util.UUID;
 
 /**
- * @Author java实战基地
- * @Version 2383404558
+ * @Author lpm
+ *  
  */
 @RestController
 @RequestMapping("/api/upload")

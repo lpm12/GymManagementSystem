@@ -8,8 +8,8 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 /**
- * @Author java实战基地
- * @Version 2383404558
+ * @Author lpm
+ *
  */
 @Configuration //表明MyBatisPlusConfig是一个配置类
 @MapperScan("com.itmk.*.*.mapper") //配置扫描mapper接口的路径

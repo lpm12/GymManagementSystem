@@ -20,8 +20,8 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 /**
- * @Author java实战基地
- * @Version 2383404558
+ * @Author lpm
+ *  
  */
 @Component("custometUserDetailService")
 public class CustometUserDetailService implements UserDetailsService {

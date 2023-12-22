@@ -5,8 +5,8 @@ import com.itmk.web.sys_role.entity.SaveMenuParm;
 import com.itmk.web.sys_role_menu.entity.RoleMenu;
 
 /**
- * @Author java实战基地
- * @Version 2383404558
+ * @Author lpm
+ *  
  */
 public interface RoleMenuService extends IService<RoleMenu> {
     //保存角色权限

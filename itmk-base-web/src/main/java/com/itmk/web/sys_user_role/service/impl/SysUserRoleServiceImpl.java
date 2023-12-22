@@ -7,8 +7,8 @@ import com.itmk.web.sys_user_role.service.SysUserRoleService;
 import org.springframework.stereotype.Service;
 
 /**
- * @Author java实战基地
- * @Version 2383404558
+ * @Author lpm
+ *  
  */
 @Service
 public class SysUserRoleServiceImpl extends ServiceImpl<SysUserRoleMapper, SysUserRole> implements SysUserRoleService {

@@ -8,8 +8,8 @@ import lombok.Data;
 import java.math.BigDecimal;
 
 /**
- * @Author java实战基地
- * @Version 2383404558
+ * @Author lpm
+ *  
  */
 @Data
 @TableName("member_card")

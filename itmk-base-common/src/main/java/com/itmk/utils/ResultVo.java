@@ -4,8 +4,8 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 
 /**
- * @Author java实战基地
- * @Version 2383404558
+ * @Author lpm
+ *
  */
 @Data  //自动生成get和set方法
 @AllArgsConstructor

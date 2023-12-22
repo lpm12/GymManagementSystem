@@ -1,8 +1,8 @@
 package com.itmk.web.goods_order.entity;
 
 /**
- * @Author java实战基地
- * @Version 2383404558
+ * @Author lpm
+ *  
  */
 
 import com.baomidou.mybatisplus.annotation.IdType;
@@ -14,8 +14,8 @@ import java.math.BigDecimal;
 import java.util.Date;
 
 /**
- * @Author java实战基地
- * @Version 2383404558
+ * @Author lpm
+ *  
  */
 @Data
 @TableName("goods_order")
