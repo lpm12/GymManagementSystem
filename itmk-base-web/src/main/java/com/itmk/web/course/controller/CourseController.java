@@ -123,20 +123,20 @@ public class CourseController {
         return ResultUtils.success("报名成功!");
     }
     //退课
-    @PreAuthorize("hasAuthority('sys:courseList:quit')")
+    @PreAuthorize("hasAuthority('sys:mycourse:quit')")
     @PostMapping("/quitCourse")
     public ResultVo quitCourse(@RequestBody MemberCourse memberCourse) {
         try {
             // 查询报名信息
-            MemberCourse existingMemberCourse = memberCourseService.getById(memberCourse.getMemberCourseId());
-
-            if (existingMemberCourse == null) {
+            QueryWrapper<MemberCourse> query = new QueryWrapper<>();
+            query.lambda().eq(MemberCourse::getCourseId, memberCourse.getCourseId())
+                    .eq(MemberCourse::getMemberId, memberCourse.getMemberId());
+            MemberCourse one = memberCourseService.getOne(query);
+            if (one == null) {
                 return ResultUtils.error("该报名记录不存在！");
             }
-
             // 处理退课逻辑
-            memberCourseService.quitCourse(existingMemberCourse);
-
+            memberCourseService.quitCourse(one);
             return ResultUtils.success("退课成功！");
         } catch (Exception e) {
             e.printStackTrace();
