@@ -33,6 +33,12 @@ public class GoodsOrderServiceImpl extends ServiceImpl<GoodsOrderMapper, GoodsOr
     private SysUserService sysUserService;
     @Autowired
     private GoodsOrderService goodsOrderService;
+
+    @Override
+    public List<EchartItem> recentIncome() {
+        return this.baseMapper.recentIncome();
+    }
+
     @Override
     public List<EchartItem> hotGoods() {
         return this.baseMapper.hotGoods();

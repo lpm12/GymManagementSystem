@@ -12,6 +12,8 @@ import java.util.List;
  *  
  */
 public interface GoodsOrderService extends IService<GoodsOrder> {
+    //近期收益
+    List<EchartItem> recentIncome();
     //热销商品
     List<EchartItem> hotGoods();
     //热销卡

@@ -76,6 +76,20 @@ public class HomeController {
     }
 
     //热销商品
+    @GetMapping("/getRecentIncome")
+    public ResultVo getRecentIncome() {
+        List<EchartItem> echartItems = goodsOrderService.recentIncome();
+        Echart echart = new Echart();
+        if (echartItems.size() > 0) {
+            for (int i = 0; i < echartItems.size(); i++) {
+                echart.getNames().add(echartItems.get(i).getName());
+                echart.getValues().add(echartItems.get(i).getValue());
+            }
+        }
+        return ResultUtils.success("查询成功", echart);
+    }
+
+    //热销商品
     @GetMapping("/getHotGoods")
     public ResultVo getHotGoods() {
         List<EchartItem> echartItems = goodsOrderService.hotGoods();
