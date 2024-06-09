@@ -17,4 +17,5 @@ public class Material {
     private String name;
     private String details;
     private Integer numTotal;
+    private Integer availableNum;
 }

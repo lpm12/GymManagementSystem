@@ -30,5 +30,9 @@ public class Course {
     private Integer courseTime;
     private Integer maxNumber;
     private Integer registerNumber;
+    private String address;
+    private Integer materialNum;
+    private String materialClass;
+
 
 }
